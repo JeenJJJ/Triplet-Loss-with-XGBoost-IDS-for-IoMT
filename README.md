@@ -6,7 +6,7 @@ This project is a hybrid deep metric learning with Triplet Loss and XGBoost for 
 - **Maymay0x**
 - **Jeen Juvana JENY JEYARAJ**
 
-## Prérequis 
+## Requirements 
 - Pandas
 - Numpy
 - Matplotlib 
