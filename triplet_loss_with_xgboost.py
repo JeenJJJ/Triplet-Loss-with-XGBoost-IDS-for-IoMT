@@ -53,7 +53,7 @@ def triplet_loss(y_true, y_pred, margin=1.0):
     return tf.reduce_mean(tf.maximum(pos_dist - neg_dist + margin, 0.0))
 
 # -----------------------------------------------------------------------
-# FIGURE 1 — Histogramme trafic normal
+# Figure 1 — Histogramme trafic normal
 # -----------------------------------------------------------------------
 def plot_hist_normal(df):
     col = 'SrcLoad' if 'SrcLoad' in df.columns else df.columns[5]
@@ -69,7 +69,7 @@ def plot_hist_normal(df):
     print("Saved: histo normal.png")
 
 # -----------------------------------------------------------------------
-# FIGURE 2 — Histogramme trafic attaque
+# Figure 2 — Histogramme trafic attaque
 # -----------------------------------------------------------------------
 def plot_hist_attack(df):
     col = 'SrcLoad' if 'SrcLoad' in df.columns else df.columns[5]
@@ -85,7 +85,7 @@ def plot_hist_attack(df):
     print("Saved: histo anor.png")
 
 # -----------------------------------------------------------------------
-# FIGURE 3 & 4 — Distribution avant/après SMOTE
+# Figure 3 & 4 — Distribution avant/après SMOTE
 # -----------------------------------------------------------------------
 def plot_smote(y_before, y_after):
     fig, ax = plt.subplots(figsize=(5, 4))
@@ -113,7 +113,7 @@ def plot_smote(y_before, y_after):
     print("Saved: smote_after.png")
 
 # -----------------------------------------------------------------------
-# FIGURE 5 — t-SNE (axes fixes -100 à 100 comme l'original)
+# Figure 5 — t-SNE (avec axes fixes -100 à 100)
 # -----------------------------------------------------------------------
 def plot_tsne(embeddings, labels):
     print("Computing t-SNE (this may take a minute)...")
@@ -133,7 +133,7 @@ def plot_tsne(embeddings, labels):
     print("Saved: tsne.png")
 
 # -----------------------------------------------------------------------
-# FIGURE 6 — Matrice de confusion
+# Figure 6 — Matrice de confusion
 # -----------------------------------------------------------------------
 def plot_confusion(y_test, y_pred):
     cm = confusion_matrix(y_test, y_pred)
@@ -147,7 +147,7 @@ def plot_confusion(y_test, y_pred):
     print("Saved: confusion_matrix.png")
 
 # -----------------------------------------------------------------------
-# FIGURE 7 — ROC curve notre modèle seul
+# Figure 7 — ROC curve (seulement notre modèle)
 # -----------------------------------------------------------------------
 def plot_roc_ours(y_test, y_pred_prob):
     fpr, tpr, _ = roc_curve(y_test, y_pred_prob)
@@ -168,7 +168,7 @@ def plot_roc_ours(y_test, y_pred_prob):
     print("Saved: roc_ours.png")
 
 # -----------------------------------------------------------------------
-# FIGURE 8 — Comparaison ROC : SVM, Isolation Forest, LSTM, notre modèle
+# Figure 8 — Comparaison ROC : SVM, Isolation Forest, LSTM, notre modèle
 # -----------------------------------------------------------------------
 def plot_roc_comparison(X_train_raw, X_test_raw, y_train, y_test, y_pred_prob_ours):
     print("Training baseline models for ROC comparison...")
@@ -220,7 +220,7 @@ def plot_roc_comparison(X_train_raw, X_test_raw, y_train, y_test, y_pred_prob_ou
     print("Saved: compar.png")
 
 # -----------------------------------------------------------------------
-# FIGURE 9 — Architecture overview
+# Figure 9 — Architecture overview
 # -----------------------------------------------------------------------
 def plot_architecture():
     fig, ax = plt.subplots(figsize=(10, 3))
@@ -249,7 +249,7 @@ def plot_architecture():
     print("Saved: image.png")
 
 # -----------------------------------------------------------------------
-# MAIN
+# Main
 # -----------------------------------------------------------------------
 def main():
     print("Loading data...")
